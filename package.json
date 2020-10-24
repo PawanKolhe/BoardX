@@ -11,6 +11,8 @@
   "author": "Pawan Kolhe <contact@pawankolhe.com>",
   "license": "ISC",
   "devDependencies": {
+    "cssnano": "^4.1.10",
+    "parcel-bundler": "^1.12.4",
     "sass": "^1.27.0"
   },
   "dependencies": {
