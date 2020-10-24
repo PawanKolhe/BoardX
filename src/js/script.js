@@ -20,7 +20,7 @@ addCard.addEventListener('click', (e) => {
     `;
     card.addEventListener('touchmove', (e) => {
       e.preventDefault();
-    })
+    });
 
     todoBoard.appendChild(card);
   });
