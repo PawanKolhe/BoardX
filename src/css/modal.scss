@@ -1,8 +1,8 @@
 .modal {
+  position: fixed;
   display: flex;
   width: 100vw;
   height: 100vh;
-  position: absolute;
   top: 0;
   left: 0;
   align-items: center;
@@ -22,7 +22,7 @@
 .modal__content {
   position: relative;
   background-color: white;
-  width: 400px;
+  max-width: 400px;
   height: auto;
   border-radius: 1rem;
   padding: 2rem;
@@ -51,5 +51,11 @@
     &:first-child {
       margin-left: 0;
     }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .modal__content {
+    width: 90%;
   }
 }

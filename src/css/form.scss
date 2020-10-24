@@ -9,6 +9,8 @@
   }
 
   input, textarea {
+    display: block;
+    min-width: 0;
     border: 1px solid #8592AD;
     border-radius: 0.5rem;
     outline: none;

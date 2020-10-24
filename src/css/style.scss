@@ -4,6 +4,10 @@
 @import "form.scss";
 @import "modal.scss";
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
 }
@@ -93,4 +97,18 @@ body {
     padding: 0 5% 3rem 5%;
     max-width: 1920px;
   }
+}
+
+@media screen and (max-width: 300px) {
+  .content {
+    padding: 0;
+    width: 100%;
+  }
+  .boards .board {
+    border-radius: unset;
+  }
+}
+
+.noscroll { 
+  overflow: hidden;
 }

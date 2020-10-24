@@ -24,20 +24,25 @@ const createModal = (title, callback) => {
     </div>
   `;
 
-  const body = document.querySelector('body');
-  body.appendChild(modal);
+  document.body.appendChild(modal);
+  document.body.classList.toggle('noscroll', true);
 
   // Cancel button
   modal.querySelector('#buttonCancel').addEventListener('click', () => {
-    modal.remove();
+    removeModal();
   });
 
   // Add Card button
   modal.querySelector('#buttonAddCard').addEventListener('click', () => {
     const task = modal.querySelector('#cardText').value;
     callback(task);
-    modal.remove();
+    removeModal();
   });
+}
+
+const removeModal = () => {
+  document.body.classList.toggle('noscroll', false);
+  modal.remove();
 }
 
 module.exports = {

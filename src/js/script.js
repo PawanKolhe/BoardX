@@ -18,6 +18,9 @@ addCard.addEventListener('click', (e) => {
     card.innerHTML = `
       <div class="card__text">${task}</div>
     `;
+    card.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+    })
 
     todoBoard.appendChild(card);
   });
