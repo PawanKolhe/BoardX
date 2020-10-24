@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Board</title>
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.scss">
+</head>
+<body>
+  <header class="header">
+    <h1>Project Board</h1>
+  </header>
+  <main class="content">
+    <div class="boards">
+      <!-- TO DO -->
+      <div class="board" id="todoBoard">
+        <div class="board__header">
+          <div class="board__title">To Do</div>
+        </div>
+        <div class="board__draggable">
+          <div class="card">
+            <div class="card__text">Example Card</div>
+          </div>
+          <div class="card">
+            <div class="card__text">Example Card</div>
+          </div>
+        </div>
+      </div>
+      <!-- IN PROGRESS -->
+      <div class="board" id="inprogressBoard">
+        <div class="board__header">
+          <div class="board__title">In Progress</div>
+        </div>
+        <div class="board__draggable"></div>
+      </div>
+      <!-- CODE REVIEW -->
+      <div class="board" id="codereviewBoard">
+        <div class="board__header">
+          <div class="board__title">Code Review</div>
+        </div>
+        <div class="board__draggable"></div>
+      </div>
+      <!-- DONE -->
+      <div class="board" id="doneBoard">
+        <div class="board__header">
+          <div class="board__title">Done</div>
+        </div>
+        <div class="board__draggable"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js'></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

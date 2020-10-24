@@ -1,0 +1,20 @@
+{
+  "name": "project-board",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "Pawan Kolhe <contact@pawankolhe.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.27.0"
+  },
+  "dependencies": {
+    "dragula": "^3.7.3",
+    "normalize.css": "^8.0.1"
+  }
+}

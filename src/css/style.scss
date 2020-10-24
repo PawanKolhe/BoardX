@@ -1,0 +1,75 @@
+@import "normalize.css";
+@import "dragula/dist/dragula.css";
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
+  color: #344563;
+  text-align: center;
+  padding: 1rem;
+
+  h1 {
+    font-weight: 700;
+  }
+}
+
+.content {
+  padding: 0 3rem 3rem 3rem;
+  max-width: 1920px;
+}
+
+.boards {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+
+  .board {
+    min-height: 300px;
+    background-color: rgb(244, 246, 250);
+    border-radius: 1rem;
+    padding: 0rem 1rem 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+      padding: 1rem 0;
+    }
+
+    &__title {
+      color: #8592ad;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    &__draggable {
+      flex: 1;
+    }
+  }
+}
+
+.card {
+  min-height: 100px;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  &__text {
+    color: #344563;
+    font-weight: 500;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    cursor: grab;
+  }
+  &:active {
+    cursor: grabbing;
+  }
+}
