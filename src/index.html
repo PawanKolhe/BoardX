@@ -7,14 +7,23 @@
 
   <!-- FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.scss">
 </head>
 <body>
+
   <header class="header">
     <h1>Project Board</h1>
   </header>
+
+  <div class="toolbar">
+    <button id="addCard" class="action-button">
+      <i class="fas fa-plus"></i> Add Card
+    </button>
+  </div>
+
   <main class="content">
     <div class="boards">
       <!-- TO DO -->
@@ -23,9 +32,6 @@
           <div class="board__title">To Do</div>
         </div>
         <div class="board__draggable">
-          <div class="card">
-            <div class="card__text">Example Card</div>
-          </div>
           <div class="card">
             <div class="card__text">Example Card</div>
           </div>

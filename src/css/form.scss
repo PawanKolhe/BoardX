@@ -1,0 +1,23 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-weight: 500;
+    color: #8592AD;
+    margin-bottom: 5px;
+  }
+
+  input, textarea {
+    border: 1px solid #8592AD;
+    border-radius: 0.5rem;
+    outline: none;
+    padding: 0.8rem 0.8rem;
+    color: #344563;
+    background-color: #f8f9fc;
+  }
+
+  textarea {
+    resize: none;
+  }
+}
