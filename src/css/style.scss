@@ -1,5 +1,6 @@
 @import "normalize.css";
 @import "dragula/dist/dragula.css";
+@import "list.scss";
 @import "card.scss";
 @import "button.scss";
 @import "form.scss";
@@ -37,52 +38,6 @@ body {
 .content {
   padding: 0 3rem 3rem 3rem;
   max-width: 1920px;
-}
-
-.lists {
-  padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  // grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.list {
-  min-height: 300px;
-  background-color: rgb(244, 246, 250);
-  border-radius: 1rem;
-  padding: 0rem 1rem 1.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-
-  &__header {
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    .list__title {
-      flex: 1;
-    }
-
-    .list__drag {
-      height: 15px;
-      padding: 0 3px;
-      opacity: 0.5;
-      cursor: pointer;
-    }
-  }
-
-  &__title {
-    color: #8592ad;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
-  &__draggable {
-    flex: 1;
-  }
 }
 
 @media screen and (max-width: 1000px) {

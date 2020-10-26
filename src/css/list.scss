@@ -1,0 +1,53 @@
+.lists {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.list {
+  min-height: 300px;
+  background-color: rgb(244, 246, 250);
+  border-radius: 1rem;
+  padding: 0rem 1rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .list__title {
+      flex: 1;
+    }
+
+    .list__drag {
+      height: 15px;
+      padding: 0 3px;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    color: #8592ad;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__draggable {
+    flex: 1;
+  }
+
+  &.gu-transit {
+    background-color: #e3e6ee;
+    border: 1px solid #8592B4;
+  }
+  &.gu-mirror {
+    cursor: grabbing;
+  }
+}

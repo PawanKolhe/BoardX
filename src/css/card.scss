@@ -4,6 +4,8 @@
   border-radius: 1rem;
   padding: 1rem;
   margin-bottom: 1rem;
+  user-select: none;
+  cursor: pointer;
 
   &__text {
     color: #344563;
@@ -13,11 +15,16 @@
   &:last-child {
     margin-bottom: 0;
   }
-
-  &:hover {
-    cursor: pointer;
-  }
+  
   &:active {
+    cursor: grabbing;
+  }
+
+  &.gu-transit {
+    background-color: #e3e6f0;
+    border: 1px solid #8592B4;
+  }
+  &.gu-mirror {
     cursor: grabbing;
   }
 }
