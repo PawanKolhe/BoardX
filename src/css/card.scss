@@ -1,0 +1,23 @@
+.card {
+  min-height: 100px;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  &__text {
+    color: #344563;
+    font-weight: 500;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    cursor: grab;
+  }
+  &:active {
+    cursor: grabbing;
+  }
+}

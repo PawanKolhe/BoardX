@@ -1,5 +1,6 @@
 @import "normalize.css";
 @import "dragula/dist/dragula.css";
+@import "card.scss";
 @import "button.scss";
 @import "form.scss";
 @import "modal.scss";
@@ -38,52 +39,28 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   // grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2rem;
-
-  .board {
-    min-height: 300px;
-    background-color: rgb(244, 246, 250);
-    border-radius: 1rem;
-    padding: 0rem 1rem 1.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-
-    &__header {
-      padding: 1rem 0;
-    }
-
-    &__title {
-      color: #8592ad;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    &__draggable {
-      flex: 1;
-    }
-  }
 }
 
-.card {
-  min-height: 100px;
-  background-color: white;
+.board {
+  min-height: 300px;
+  background-color: rgb(244, 246, 250);
   border-radius: 1rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  padding: 0rem 1rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
 
-  &__text {
-    color: #344563;
-    font-weight: 500;
+  &__header {
+    padding: 1rem 0;
   }
 
-  &:last-child {
-    margin-bottom: 0;
+  &__title {
+    color: #8592ad;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 
-  &:hover {
-    cursor: grab;
-  }
-  &:active {
-    cursor: grabbing;
+  &__draggable {
+    flex: 1;
   }
 }
 

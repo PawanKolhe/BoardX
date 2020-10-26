@@ -1,27 +1,41 @@
 import { createModal } from "./modal";
+import { createBoard } from "./board";
+import { createCard } from "./card";
 
 // Boards
-const todoBoard = document.querySelector('#todoBoard .board__draggable');
-const inprogressBoard = document.querySelector('#inprogressBoard .board__draggable');
-const codereviewBoard = document.querySelector('#codereviewBoard .board__draggable');
-const doneBoard = document.querySelector('#doneBoard .board__draggable');
+const boards = document.querySelector('.boards');
+
+// Add sample boards
+boards.appendChild(createBoard('To Do'));
+boards.appendChild(createBoard('In Progress'));
+boards.appendChild(createBoard('Done'));
+
+// Create sample card
+boards.firstChild.querySelector('.board__draggable').appendChild(createCard('Sample Task'));
 
 // Make boards draggable
-dragula([todoBoard, inprogressBoard, codereviewBoard, doneBoard]);
+const dragulaBoards = dragula([boards], {
+  direction: 'horizontal',
+  moves: (el, source, handle, sibling) => {
+    if(handle.classList.contains('card') || handle.classList.contains('card__text')) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+});
 
-// Add Card
-const addCard = document.querySelector('#addCard');
-addCard.addEventListener('click', (e) => {
+// Make cards draggable
+const dragulaCards = dragula({
+  direction: 'vertical',
+  isContainer: function (el) {
+    return el.classList.contains('board__draggable');
+  }
+});
+
+// Add Card handler
+document.querySelector('#addCard').addEventListener('click', (e) => {
   createModal('Add Card', (task) => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-      <div class="card__text">${task}</div>
-    `;
-    card.addEventListener('touchmove', (e) => {
-      e.preventDefault();
-    });
-
-    todoBoard.appendChild(card);
+    boards.firstChild.querySelector('.board__draggable').appendChild(createCard(task));
   });
 });
