@@ -39,7 +39,7 @@ body {
   max-width: 1920px;
 }
 
-.boards {
+.lists {
   padding: 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -47,7 +47,7 @@ body {
   gap: 2rem;
 }
 
-.board {
+.list {
   min-height: 300px;
   background-color: rgb(244, 246, 250);
   border-radius: 1rem;
@@ -62,11 +62,11 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    .board__title {
+    .list__title {
       flex: 1;
     }
 
-    .board__drag {
+    .list__drag {
       height: 15px;
       padding: 0 3px;
       opacity: 0.5;
@@ -86,7 +86,7 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
-  .boards {
+  .lists {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
   .toolbar {
@@ -103,7 +103,7 @@ body {
     padding: 0;
     width: 100%;
   }
-  .boards .board {
+  .lists .list {
     border-radius: unset;
   }
 }

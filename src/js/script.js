@@ -1,26 +1,26 @@
 import { createModal } from "./modal";
-import { createBoard } from "./board";
+import { createList } from "./board";
 import { createCard } from "./card";
 
 // State
 const boardState = {};
 
 // Boards
-const boards = document.querySelector('.boards');
+const lists = document.querySelector('.lists');
 
 // Add sample boards
-boards.appendChild(createBoard('To Do'));
-boards.appendChild(createBoard('In Progress'));
-boards.appendChild(createBoard('Done'));
+lists.appendChild(createList('To Do'));
+lists.appendChild(createList('In Progress'));
+lists.appendChild(createList('Done'));
 
 // Create sample card
-boards.firstChild.querySelector('.board__draggable').appendChild(createCard('Sample Task'));
+lists.firstChild.querySelector('.list__draggable').appendChild(createCard('Sample Task'));
 
 // Make boards draggable
-const dragulaBoards = dragula([boards], {
+const dragulaLists = dragula([lists], {
   direction: 'horizontal',
   moves: (el, source, handle, sibling) => {
-    if(handle.classList.contains('board__drag')) {
+    if(handle.classList.contains('list__drag')) {
       return true;
     } else {
       return false;
@@ -32,7 +32,7 @@ const dragulaBoards = dragula([boards], {
 const dragulaCards = dragula({
   direction: 'vertical',
   isContainer: function (el) {
-    return el.classList.contains('board__draggable');
+    return el.classList.contains('list__draggable');
   }
 });
 
@@ -47,21 +47,21 @@ document.querySelector('#addCard').addEventListener('click', (e) => {
     </div>
   `;
   createModal('Add Card', modalHTML, (task) => {
-    boards.firstChild.querySelector('.board__draggable').appendChild(createCard(task));
+    lists.firstChild.querySelector('.list__draggable').appendChild(createCard(task));
   });
 });
 
 // Add Board handler
-document.querySelector('#addBoard').addEventListener('click', (e) => {
+document.querySelector('#addList').addEventListener('click', (e) => {
   const modalHTML = `
     <div id="add-form">
       <div class="input-group">
         <label for="cardText">Name</label>
-        <textarea id="cardText" cols="30" rows="5"></textarea>
+        <input id="cardText" type="text"></input>
       </div>
     </div>
   `;
-  createModal('Add Board', modalHTML, (name) => {
-    boards.appendChild(createBoard(name));
+  createModal('Add List', modalHTML, (name) => {
+    lists.appendChild(createList(name));
   });
 });

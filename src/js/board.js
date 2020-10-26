@@ -1,19 +1,19 @@
-const createBoard = (name) => {
-  const board = document.createElement('div');
-  board.className = 'board';
-  board.innerHTML = `
-    <div class="board__header">
-      <div class="board__title">${name}</div>
-      <img class="board__drag" src="./assets/drag-dots.svg" alt="drag" />
+const createList = (name) => {
+  const list = document.createElement('div');
+  list.className = 'list';
+  list.innerHTML = `
+    <div class="list__header">
+      <div class="list__title">${name}</div>
+      <img class="list__drag" src="./assets/drag-dots.svg" alt="drag" />
     </div>
-    <div class="board__draggable"></div>
+    <div class="list__draggable"></div>
   `;
-  board.addEventListener('touchmove', (e) => {
+  list.addEventListener('touchmove', (e) => {
     e.preventDefault();
   });
-  return board;
+  return list;
 }
 
 module.exports = {
-  createBoard
+  createList
 }
