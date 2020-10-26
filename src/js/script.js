@@ -31,6 +31,8 @@ const dragulaLists = dragula([lists], {
 // Make cards draggable
 const dragulaCards = dragula({
   direction: 'vertical',
+  slideFactorX: 7,
+  slideFactorY: 7,
   isContainer: function (el) {
     return el.classList.contains('list__draggable');
   }
@@ -41,8 +43,9 @@ document.querySelector('#addCard').addEventListener('click', (e) => {
   const modalHTML = `
     <div id="add-form">
       <div class="input-group">
-        <label for="cardText">Task</label>
-        <textarea id="cardText" cols="30" rows="5"></textarea>
+        <label for="inputValue">Task</label>
+        <input id="inputValue" type="text" />
+        <!--<textarea id="cardText" cols="35" rows="5"></textarea>-->
       </div>
     </div>
   `;
@@ -56,8 +59,8 @@ document.querySelector('#addList').addEventListener('click', (e) => {
   const modalHTML = `
     <div id="add-form">
       <div class="input-group">
-        <label for="cardText">Name</label>
-        <input id="cardText" type="text"></input>
+        <label for="inputValue">Name</label>
+        <input id="inputValue" type="text" />
       </div>
     </div>
   `;

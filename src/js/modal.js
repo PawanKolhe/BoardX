@@ -29,7 +29,7 @@ const createModal = (title, content, callback) => {
 
   // Add Card button
   modal.querySelector('#buttonAddCard').addEventListener('click', () => {
-    const task = modal.querySelector('#cardText').value;
+    const task = modal.querySelector('#inputValue').value;
     callback(task);
     removeModal();
   });
