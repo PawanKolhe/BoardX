@@ -33,6 +33,10 @@ const createModal = (title, content, callback) => {
     callback(task);
     removeModal();
   });
+
+  modal.querySelector('.modal__backdrop').addEventListener('click', () => {
+    removeModal();
+  });
 }
 
 const removeModal = () => {

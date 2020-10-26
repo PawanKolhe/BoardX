@@ -29,7 +29,7 @@
       height: 15px;
       padding: 0 3px;
       opacity: 0.5;
-      cursor: pointer;
+      cursor: grab;
     }
   }
 
@@ -47,7 +47,7 @@
     background-color: #e3e6ee;
     border: 1px solid #8592B4;
   }
-  &.gu-mirror {
+  &.gu-mirror .list__drag {
     cursor: grabbing;
   }
 }
