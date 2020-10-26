@@ -1,6 +1,6 @@
 let modal;
 
-const createModal = (title, callback) => {
+const createModal = (title, content, callback) => {
   modal = document.createElement('div');
   modal.className = 'modal';
   modal.innerHTML = `
@@ -10,12 +10,7 @@ const createModal = (title, callback) => {
         <div class="modal__title">${title}</div>
       </div>
       <div class="modal__info">
-        <div id="add-form">
-          <div class="input-group">
-            <label for="cardText">Task</label>
-            <textarea id="cardText" cols="30" rows="5"></textarea>
-          </div>
-        </div>
+        ${content}
       </div>
       <div class="modal__actions">
         <button id="buttonCancel" class="action-button">Cancel</button>

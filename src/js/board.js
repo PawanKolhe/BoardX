@@ -4,6 +4,7 @@ const createBoard = (name) => {
   board.innerHTML = `
     <div class="board__header">
       <div class="board__title">${name}</div>
+      <img class="board__drag" src="./assets/drag-dots.svg" alt="drag" />
     </div>
     <div class="board__draggable"></div>
   `;
