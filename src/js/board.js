@@ -8,7 +8,7 @@ const createList = (name) => {
     </div>
     <div class="list__draggable"></div>
   `;
-  list.addEventListener('touchmove', (e) => {
+  list.querySelector('.list__drag').addEventListener('touchmove', (e) => {
     e.preventDefault();
   });
   return list;
