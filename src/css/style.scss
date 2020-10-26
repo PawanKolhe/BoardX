@@ -25,7 +25,13 @@ body {
 }
 
 .toolbar {
-  padding: 0rem 3rem 1rem 3rem;
+  padding: 0rem 3rem 2rem 3rem;
+  display: flex;
+  flex-direction: row;
+
+  .action-button {
+    margin-right: 1rem;
+  }
 }
 
 .content {

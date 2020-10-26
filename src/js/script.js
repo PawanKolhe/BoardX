@@ -39,3 +39,10 @@ document.querySelector('#addCard').addEventListener('click', (e) => {
     boards.firstChild.querySelector('.board__draggable').appendChild(createCard(task));
   });
 });
+
+// Add Board handler
+document.querySelector('#addBoard').addEventListener('click', (e) => {
+  createModal('Add Board', (name) => {
+    boards.appendChild(createBoard(name));
+  });
+});
