@@ -34,11 +34,11 @@ const dragulaCards = dragula({
 });
 
 // Add Card handler
-document.querySelector('#addCardButton').addEventListener('click', (e) => {
-  createModal('Add Card', addCardModalHTML, (task) => {
-    document.querySelector('#listsContainer').firstChild.querySelector('.list__draggable').appendChild(createCard(task));
-  });
-});
+// document.querySelector('#addCardButton').addEventListener('click', (e) => {
+//   createModal('Add Card', addCardModalHTML, (task) => {
+//     document.querySelector('#listsContainer').firstChild.querySelector('.list__draggable').appendChild(createCard(task));
+//   });
+// });
 
 // Add Board handler
 document.querySelector('#addListButton').addEventListener('click', (e) => {
