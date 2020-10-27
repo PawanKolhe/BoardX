@@ -44,6 +44,26 @@ const removeModal = () => {
   modal.remove();
 }
 
+const addCardModalHTML = `
+  <div id="add-form">
+    <div class="input-group">
+      <label for="inputValue">Task</label>
+      <input id="inputValue" type="text" />
+    </div>
+  </div>
+`;
+
+const addListModalHTML = `
+  <div id="add-form">
+    <div class="input-group">
+      <label for="inputValue">Name</label>
+      <input id="inputValue" type="text" pattern="[_a-zA-Z]+[_a-zA-Z0-9-]*" />
+    </div>
+  </div>
+`;
+
 module.exports = {
-  createModal
+  createModal,
+  addCardModalHTML,
+  addListModalHTML,
 }

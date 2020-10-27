@@ -1,23 +1,18 @@
-import { createModal } from "./modal";
-import { createList } from "./board";
+import { boardState } from "./boardState";
+import { createModal, addCardModalHTML, addListModalHTML } from "./modal";
+import { createList } from "./list";
 import { createCard } from "./card";
 
-// State
-const boardState = {};
-
-// Boards
-const lists = document.querySelector('.lists');
-
 // Add sample boards
-lists.appendChild(createList('To Do'));
-lists.appendChild(createList('In Progress'));
-lists.appendChild(createList('Done'));
+createList(boardState, 'To Do');
+createList(boardState, 'In Progress');
+createList(boardState, 'Done');
 
-// Create sample card
-lists.firstChild.querySelector('.list__draggable').appendChild(createCard('Sample Task'));
+// Add sample card
+createCard(boardState, 'To Do', 'Sample Task');
 
 // Make boards draggable
-const dragulaLists = dragula([lists], {
+const dragulaLists = dragula([document.querySelector('#listsContainer')], {
   direction: 'horizontal',
   moves: (el, source, handle, sibling) => {
     if(handle.classList.contains('list__drag')) {
@@ -39,32 +34,15 @@ const dragulaCards = dragula({
 });
 
 // Add Card handler
-document.querySelector('#addCard').addEventListener('click', (e) => {
-  const modalHTML = `
-    <div id="add-form">
-      <div class="input-group">
-        <label for="inputValue">Task</label>
-        <input id="inputValue" type="text" />
-        <!--<textarea id="cardText" cols="35" rows="5"></textarea>-->
-      </div>
-    </div>
-  `;
-  createModal('Add Card', modalHTML, (task) => {
-    lists.firstChild.querySelector('.list__draggable').appendChild(createCard(task));
+document.querySelector('#addCardButton').addEventListener('click', (e) => {
+  createModal('Add Card', addCardModalHTML, (task) => {
+    document.querySelector('#listsContainer').firstChild.querySelector('.list__draggable').appendChild(createCard(task));
   });
 });
 
 // Add Board handler
-document.querySelector('#addList').addEventListener('click', (e) => {
-  const modalHTML = `
-    <div id="add-form">
-      <div class="input-group">
-        <label for="inputValue">Name</label>
-        <input id="inputValue" type="text" />
-      </div>
-    </div>
-  `;
-  createModal('Add List', modalHTML, (name) => {
-    lists.appendChild(createList(name));
+document.querySelector('#addListButton').addEventListener('click', (e) => {
+  createModal('Add List', addListModalHTML, (name) => {
+    createList(boardState, name);
   });
 });

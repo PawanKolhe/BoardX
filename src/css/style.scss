@@ -1,3 +1,7 @@
+$grey-dark: #344563;
+$grey-normal: #8592AD;
+$grey-light: #f4f6fa;
+
 @import "normalize.css";
 @import "dragula/dist/dragula.css";
 @import "list.scss";
@@ -16,7 +20,7 @@ body {
 }
 
 .header {
-  color: #344563;
+  color: $grey-dark;
   text-align: center;
   padding: 1rem;
 

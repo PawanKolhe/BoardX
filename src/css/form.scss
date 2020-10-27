@@ -4,14 +4,14 @@
 
   label {
     font-weight: 500;
-    color: #8592AD;
+    color: $grey-normal;
     margin-bottom: 5px;
   }
 
   input, textarea {
     display: block;
     min-width: 0;
-    border: 1px solid #8592AD;
+    border: 1px solid $grey-normal;
     border-radius: 0.5rem;
     outline: none;
     padding: 0.8rem 0.8rem;
