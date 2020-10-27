@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "dragula": "^3.7.3",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "sortablejs": "^1.12.0"
   },
   "staticFiles": {
     "staticPath": "public",

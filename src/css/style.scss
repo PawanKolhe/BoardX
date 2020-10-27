@@ -12,11 +12,15 @@ $grey-light: #f4f6fa;
 
 * {
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   overscroll-behavior: none;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .header {
@@ -40,8 +44,10 @@ body {
 }
 
 .content {
-  padding: 0 3rem 3rem 3rem;
+  padding: 0 0 2rem 0;
   max-width: 1920px;
+  flex: 1;
+  overflow: auto;
 }
 
 @media screen and (max-width: 1000px) {
@@ -52,8 +58,12 @@ body {
     padding: 0 5% 1rem 5%;
   }
   .content {
-    padding: 0 5% 3rem 5%;
+    padding: 0 0 2rem 0;
     max-width: 1920px;
+  }
+  .lists {
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
 
