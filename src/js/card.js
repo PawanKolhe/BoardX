@@ -13,11 +13,13 @@ const getCardHTML = ({ task }) => {
 }
 
 const createCard = (boardState, listName, task) => {
-  const card = {
-    task
-  };
   const listId = generateListId(listName);
   const list = boardState.lists.find(list => list.id === listId);
+  const card = {
+    task,
+    id: boardState.cardCount + 1,
+  };
+  boardState.cardCount++;
   list.cards.push(card);
 
   document.querySelector('#listsContainer').querySelector(`#listID-${listId} .list__draggable`).appendChild(getCardHTML(card));

@@ -1,12 +1,12 @@
-import { boardState } from "./boardState";
 import { generateListId } from "./utils";
 import { createModal, addCardModalHTML } from "./modal";
 import { createCard } from "./card";
 
-const getListHTML = ({ name, id }) => {
+const getListHTML = (boardState, { name, id }) => {
   const list = document.createElement('div');
   list.className = 'list';
   list.id = `listID-${id}`;
+  list.setAttribute('data-id', id);
   list.innerHTML = `
     <div class="list__header">
       <div class="list__title">${name}</div>
@@ -41,7 +41,7 @@ const createList = (boardState, name) => {
     cards: []
   };
   boardState.lists.push(list);
-  const listHTML = getListHTML(list);
+  const listHTML = getListHTML(boardState, list);
   document.querySelector('#listsContainer').appendChild(listHTML);
 }
 

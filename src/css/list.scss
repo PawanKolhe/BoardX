@@ -97,3 +97,7 @@ $list-button-back: #e7ecf5;
     background-color: darken($list-button-back, 1%);
   }
 }
+
+.sortable-chosen {
+  cursor: grabbing;
+}

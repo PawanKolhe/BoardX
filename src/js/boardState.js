@@ -1,6 +1,7 @@
 // State
 const boardState = {
-  lists: []
+  lists: [],
+  cardCount: 0,
 };
 
 module.exports = {
