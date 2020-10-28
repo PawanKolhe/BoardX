@@ -12,7 +12,7 @@ const getListHTML = (boardState, { name, id }) => {
       <div class="list__title">${name}</div>
       <img class="list__drag" src="./assets/drag-dots.svg" alt="drag" />
     </div>
-    <div class="list__draggable"></div>
+    <div id="${id}" class="list__draggable"></div>
     <div class="list__add-card-button">
       <i class="fas fa-plus"></i>
       <div class="list__add-card-button-text">Add Card</div>
@@ -29,6 +29,11 @@ const getListHTML = (boardState, { name, id }) => {
   return list;
 }
 
+const renderList = (boardState, list) => {
+  const listHTML = getListHTML(boardState, list);
+  document.querySelector('#listsContainer').appendChild(listHTML);
+}
+
 const createList = (boardState, name) => {
   const id = generateListId(name);
   const found = boardState.lists.find(list => list.id === id);
@@ -41,11 +46,13 @@ const createList = (boardState, name) => {
     cards: []
   };
   boardState.lists.push(list);
-  const listHTML = getListHTML(boardState, list);
-  document.querySelector('#listsContainer').appendChild(listHTML);
+  renderList(boardState, list);
+  // Save board state
+  localStorage.setItem('boardState', JSON.stringify(boardState));
 }
 
 module.exports = {
   getListHTML,
+  renderList,
   createList
 }
