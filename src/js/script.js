@@ -1,10 +1,10 @@
-import { renderBoard } from "./board";
+import { renderBoard, loadBoardState } from "./board";
 import { createModal, addListModalHTML } from "./modal";
 import { createList } from "./list";
 import { createCard } from "./card";
 import { Sortable } from "sortablejs";
 
-let boardState = localStorage.getItem('boardState');
+let boardState = loadBoardState();
 if(boardState) {
   boardState = JSON.parse(boardState);
   renderBoard(boardState);
@@ -40,6 +40,7 @@ const draggableLists = new Sortable(listsContainer, {
   handle: '.list__drag',
   animation: 150,
   dataIdAttr: 'data-id',
+  group: 'lists',
   setData: function (dataTransfer, dragEl) {
     const img = new Image();
     img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';

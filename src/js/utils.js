@@ -1,4 +1,4 @@
-const generateListId = (text) => text.toLowerCase().replace(' ', '-');
+const generateListId = (text) => text.toLowerCase().replaceAll(' ', '-');
 
 module.exports = {
   generateListId

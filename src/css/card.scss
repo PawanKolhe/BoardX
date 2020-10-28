@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   min-height: 100px;
   background-color: white;
   border-radius: 1rem;
@@ -7,9 +8,10 @@
   user-select: none;
   cursor: pointer;
 
-  &__text {
-    color: $grey-dark;
-    font-weight: 500;
+  &:hover {
+    .card__close {
+      display: flex;
+    }
   }
 
   &:last-child {
@@ -22,5 +24,33 @@
   }
   &.gu-mirror {
     cursor: grabbing;
+  }
+}
+
+.card__text {
+  color: $grey-dark;
+  font-weight: 500;
+}
+
+.card__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  background-color: $grey-light;
+  color: $grey-normal;
+  border-radius: 1rem;
+  // border-bottom-left-radius: 0.5rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: darken($color: $grey-light, $amount: 2.5%);
+  }
+
+  i {
+    font-size: 0.9rem;
   }
 }

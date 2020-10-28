@@ -10,6 +10,16 @@ const renderBoard = (boardState) => {
   });
 }
 
+const loadBoardState = () => {
+  return localStorage.getItem('boardState');
+}
+
+// const saveBoardState = (boardState) => {
+//   localStorage.setItem('boardState', JSON.stringify(boardState));
+// }
+
 module.exports = {
-  renderBoard
+  renderBoard,
+  loadBoardState,
+  // saveBoardState
 }

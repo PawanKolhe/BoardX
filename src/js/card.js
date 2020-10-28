@@ -6,11 +6,21 @@ const getCardHTML = ({ task, id }) => {
   card.id = id;
   card.innerHTML = `
     <div class="card__text">${task}</div>
+    <div class="card__close">
+      <i class="fas fa-times"></i>
+    </div>
   `;
   card.addEventListener('touchmove', (e) => {
     e.preventDefault();
   });
+  card.querySelector('.card__close').addEventListener('click', (e) => {
+    removeCard();
+  });
   return card;
+}
+
+const removeCard = () => {
+
 }
 
 const renderCard = (listId, card) => {
