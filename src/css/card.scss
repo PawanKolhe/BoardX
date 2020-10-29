@@ -5,6 +5,8 @@
   border-radius: 1rem;
   padding: 1rem;
   margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   user-select: none;
   cursor: pointer;
 
@@ -45,6 +47,7 @@
   display: none;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 
   &:hover {
     background-color: darken($color: $grey-light, $amount: 2.5%);

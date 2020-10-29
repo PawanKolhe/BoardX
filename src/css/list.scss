@@ -2,6 +2,9 @@ $list-name: #8592ad;
 $list-background: #f5f6fa;
 $list-button-back: #e7ecf5;
 
+@import "tippy.js/dist/tippy.css";
+@import "tippy.js/themes/light.css";
+
 .lists {
   height: 100%;
   padding: 0;
@@ -23,7 +26,7 @@ $list-button-back: #e7ecf5;
   min-height: 225px;
   background-color: $list-background;
   border-radius: 1rem;
-  padding: 0rem 1rem 1.5rem 1rem;
+  padding: 0rem 0rem 1.5rem 0rem;
   margin-right: 2rem;
   display: flex;
   flex-direction: column;
@@ -34,7 +37,6 @@ $list-button-back: #e7ecf5;
   }
 
   &__header {
-    padding: 1rem 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -42,15 +44,29 @@ $list-button-back: #e7ecf5;
 
     .list__title {
       flex: 1;
+      padding: 1rem 0 1rem 1rem;
+      cursor: grab;
     }
 
-    .list__drag {
-      height: 15px;
-      padding-left: 10px;
-      padding-right: 3px;
-      opacity: 0.5;
-      user-select: none;
-      cursor: grab;
+    .list__menu-button {
+      padding: 0.5rem;
+      margin-right: 0.5rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($color: $list-background, $amount: 3%);
+      }
+
+      img {
+        height: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.5;
+        user-select: none;
+      }
     }
   }
 
@@ -85,6 +101,7 @@ $list-button-back: #e7ecf5;
   color: $list-name;
   font-size: 0.8rem;
   margin-top: 1rem;
+  margin: 1rem 1rem 0 1rem;
   cursor: pointer;
   user-select: none;
 
@@ -100,4 +117,31 @@ $list-button-back: #e7ecf5;
 
 .sortable-chosen {
   cursor: grabbing;
+}
+
+.list__menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.list__menu-option {
+  min-width: 120px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $grey-light;
+  }
+
+  &-red {
+    &:hover {
+      color: #E74A3D;
+      background-color: #fff4f4;
+    }
+  }
+}
+
+.tippy-content {
+  padding: 5px 0;
 }

@@ -19,7 +19,8 @@
   "dependencies": {
     "dragula": "^3.7.3",
     "normalize.css": "^8.0.1",
-    "sortablejs": "^1.12.0"
+    "sortablejs": "^1.12.0",
+    "tippy.js": "^6.2.7"
   },
   "staticFiles": {
     "staticPath": "public",

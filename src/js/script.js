@@ -38,7 +38,7 @@ if(boardState) {
 const listsContainer = document.querySelector('#listsContainer');
 const draggableLists = new Sortable(listsContainer, {
   draggable: '.list',
-  handle: '.list__drag',
+  handle: '.list__title',
   animation: 150,
   dataIdAttr: 'data-id',
   group: 'lists',
