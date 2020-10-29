@@ -4,6 +4,7 @@ import { createList } from "./list";
 import { createCard } from "./card";
 import { Sortable } from "sortablejs";
 
+// State
 self.boardState = loadBoardState();
 if(boardState) {
   boardState = JSON.parse(boardState);

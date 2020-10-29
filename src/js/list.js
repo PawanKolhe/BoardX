@@ -47,6 +47,25 @@ const getListHTML = ({ name, id }) => {
   return list;
 }
 
+const addListToListsOrderState = (listId) => {
+  let listsOrderState = localStorage.getItem('lists');
+  listsOrderState = `${listsOrderState}|${listId}`;
+  localStorage.setItem('lists', listsOrderState);
+}
+
+const removeListFromListsOrderState = (listId) => {
+  let listsOrderState = localStorage.getItem('lists');
+  listsOrderState = listsOrderState.replace(listId, '');
+  listsOrderState = listsOrderState.replace('||', '|');
+  if(listsOrderState.charAt(0) === '|') {
+    listsOrderState = listsOrderState.substring(1);
+  }
+  if(listsOrderState.charAt(listsOrderState.length - 1) === '|') {
+    listsOrderState = listsOrderState.substring(0, listsOrderState.length - 1);
+  }
+  localStorage.setItem('lists', listsOrderState);
+}
+
 const removeList = (listElement, listId) => {
   listElement.remove();
   const listIndex = boardState.lists.findIndex(list => list.id === listId);
@@ -56,6 +75,7 @@ const removeList = (listElement, listId) => {
   console.log(JSON.stringify(boardState, null, 2));
   // Save board state
   localStorage.setItem('boardState', JSON.stringify(boardState));
+  removeListFromListsOrderState(listId);
 }
 
 const renderList = (list) => {
@@ -79,6 +99,7 @@ const createList = (name) => {
   renderList(list);
   // Save board state
   localStorage.setItem('boardState', JSON.stringify(boardState));
+  addListToListsOrderState(id);
 }
 
 module.exports = {
