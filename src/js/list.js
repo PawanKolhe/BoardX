@@ -28,12 +28,16 @@ const getListHTML = ({ name, id }) => {
       createCard(name, task);
     });
   });
+  const listMenu = document.createElement('div');
+  listMenu.className = 'list__menu';
+  listMenu.innerHTML = `
+    <div class="list__menu-option list__menu-option-red" data-action="delete">Delete</div>
+  `;
+  listMenu.querySelector('.list__menu-option[data-action="delete"]').addEventListener('click', (e) => {
+    removeList(list, id);
+  });
   tippy(list.querySelector(`.list__menu-button`), {
-    content: `
-      <div class="list__menu">
-        <div class="list__menu-option list__menu-option-red">Delete</div>
-      </div>
-    `,
+    content: listMenu,
     allowHTML: true,
     placement: 'bottom-end',
     trigger: 'click',
@@ -41,6 +45,17 @@ const getListHTML = ({ name, id }) => {
     theme: 'light',
   });
   return list;
+}
+
+const removeList = (listElement, listId) => {
+  listElement.remove();
+  const listIndex = boardState.lists.findIndex(list => list.id === listId);
+  const deleteCardCount = boardState.lists[listIndex].cards.length;
+  boardState.cardCount -= deleteCardCount;
+  boardState.lists.splice(listIndex, 1);
+  console.log(JSON.stringify(boardState, null, 2));
+  // Save board state
+  localStorage.setItem('boardState', JSON.stringify(boardState));
 }
 
 const renderList = (list) => {
