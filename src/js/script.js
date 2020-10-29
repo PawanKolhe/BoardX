@@ -12,6 +12,7 @@ if(boardState) {
   boardState =  {
     lists: [],
     cardCount: 0,
+    cardIdIncrementer: 0
   };
 
   // Add sample boards
@@ -63,16 +64,16 @@ const dragulaCards = dragula({
   direction: 'vertical',
   slideFactorX: 7,
   slideFactorY: 7,
-  delay: 1000,
-  delayOnTouchOnly: true,
   isContainer: function (el) {
     return el.classList.contains('list__draggable');
   }
 });
+
+// Update boardState card location change
 dragulaCards.on("drop", (el, target, source, sibling) => {
-  const cardID = el.id;
-  const fromListID = source.id;
-  const toListID = target.id;
+  const cardID = el.getAttribute('data-id');
+  const fromListID = source.parentElement.getAttribute('data-id');
+  const toListID = target.parentElement.getAttribute('data-id');
   const fromList = boardState.lists.find(list => list.id === fromListID);
   const toList = boardState.lists.find(list => list.id === toListID);
   const fromCardIndex = fromList.cards.findIndex(card => card.id === cardID);
@@ -88,7 +89,7 @@ dragulaCards.on("drop", (el, target, source, sibling) => {
   // Find and add card to target list
   let toCardIndex;
   for(let i = 0; i < target.childElementCount; i++) {
-    if(target.children.item(i).id === cardID) {
+    if(target.children.item(i).getAttribute('data-id') === cardID) {
       toCardIndex = i;
       break;
     }
@@ -104,7 +105,7 @@ dragulaCards.on("drop", (el, target, source, sibling) => {
   localStorage.setItem('boardState', JSON.stringify(boardState));
 });
 
-// Add List handler
+// Add List button listener
 document.querySelector('#addListButton').addEventListener('click', (e) => {
   createModal('Add List', addListModalHTML, (name) => {
     createList(name);

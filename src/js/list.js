@@ -5,7 +5,6 @@ import { createCard } from "./card";
 const getListHTML = ({ name, id }) => {
   const list = document.createElement('div');
   list.className = 'list';
-  list.id = `listID-${id}`;
   list.setAttribute('data-id', id);
   list.innerHTML = `
     <div class="list__header">
@@ -38,6 +37,7 @@ const createList = (name) => {
   const id = generateListId(name);
   const found = boardState.lists.find(list => list.id === id);
   if(found) {
+    console.error('List name already exists.');
     return;
   }
   const list = {
