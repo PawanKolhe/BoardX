@@ -1,7 +1,5 @@
-let modal;
-
 const createModal = (title, content, callback) => {
-  modal = document.createElement('div');
+  const modal = document.createElement('div');
   modal.className = 'modal';
   modal.innerHTML = `
     <div class="modal__backdrop"></div>
@@ -24,22 +22,22 @@ const createModal = (title, content, callback) => {
 
   // Cancel button
   modal.querySelector('#buttonCancel').addEventListener('click', () => {
-    removeModal();
+    removeModal(modal);
   });
 
   // Add Card button
   modal.querySelector('#buttonAddCard').addEventListener('click', () => {
     const task = modal.querySelector('#inputValue').value;
     callback(task);
-    removeModal();
+    removeModal(modal);
   });
 
   modal.querySelector('.modal__backdrop').addEventListener('click', () => {
-    removeModal();
+    removeModal(modal);
   });
 }
 
-const removeModal = () => {
+const removeModal = (modal) => {
   document.body.classList.toggle('noscroll', false);
   modal.remove();
 }

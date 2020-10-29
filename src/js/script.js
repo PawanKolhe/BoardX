@@ -4,7 +4,7 @@ import { createList } from "./list";
 import { createCard } from "./card";
 import { Sortable } from "sortablejs";
 
-let boardState = loadBoardState();
+self.boardState = loadBoardState();
 if(boardState) {
   boardState = JSON.parse(boardState);
   renderBoard(boardState);
@@ -15,12 +15,12 @@ if(boardState) {
   };
 
   // Add sample boards
-  createList(boardState, 'To Do');
-  createList(boardState, 'In Progress');
-  createList(boardState, 'Done');
+  createList('To Do');
+  createList('In Progress');
+  createList('Done');
 
   // Add sample card
-  createCard(boardState, 'To Do', 'Sample Task');
+  createCard('To Do', 'Sample Task');
 }
 
 // Make boards draggable
@@ -107,6 +107,6 @@ dragulaCards.on("drop", (el, target, source, sibling) => {
 // Add List handler
 document.querySelector('#addListButton').addEventListener('click', (e) => {
   createModal('Add List', addListModalHTML, (name) => {
-    createList(boardState, name);
+    createList(name);
   });
 });

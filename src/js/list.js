@@ -2,7 +2,7 @@ import { generateListId } from "./utils";
 import { createModal, addCardModalHTML } from "./modal";
 import { createCard } from "./card";
 
-const getListHTML = (boardState, { name, id }) => {
+const getListHTML = ({ name, id }) => {
   const list = document.createElement('div');
   list.className = 'list';
   list.id = `listID-${id}`;
@@ -23,18 +23,18 @@ const getListHTML = (boardState, { name, id }) => {
   });
   list.querySelector('.list__add-card-button').addEventListener('click', (e) => {
     createModal('Add Card', addCardModalHTML, (task) => {
-      createCard(boardState, name, task);
+      createCard(name, task);
     });
   });
   return list;
 }
 
-const renderList = (boardState, list) => {
-  const listHTML = getListHTML(boardState, list);
+const renderList = (list) => {
+  const listHTML = getListHTML(list);
   document.querySelector('#listsContainer').appendChild(listHTML);
 }
 
-const createList = (boardState, name) => {
+const createList = (name) => {
   const id = generateListId(name);
   const found = boardState.lists.find(list => list.id === id);
   if(found) {
@@ -46,7 +46,7 @@ const createList = (boardState, name) => {
     cards: []
   };
   boardState.lists.push(list);
-  renderList(boardState, list);
+  renderList(list);
   // Save board state
   localStorage.setItem('boardState', JSON.stringify(boardState));
 }

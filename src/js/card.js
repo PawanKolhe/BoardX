@@ -28,7 +28,7 @@ const renderCard = (listId, card) => {
   document.querySelector('#listsContainer').querySelector(`#listID-${listId} .list__draggable`).appendChild(cardHTML);
 }
 
-const createCard = (boardState, listName, task) => {
+const createCard = (listName, task) => {
   const listId = generateListId(listName);
   const list = boardState.lists.find(list => list.id === listId);
   const card = {

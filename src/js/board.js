@@ -3,7 +3,7 @@ import { renderCard } from "./card";
 
 const renderBoard = (boardState) => {
   boardState.lists.forEach(list => {
-    renderList(boardState, list);
+    renderList(list);
     list.cards.forEach(card => {
       renderCard(list.id, card);
     });
