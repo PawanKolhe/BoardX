@@ -11,7 +11,7 @@ const getListHTML = ({ name, id }) => {
     <div class="list__header">
       <div class="list__title">${name}</div>
       <div class="list__menu-button">
-        <img src="./assets/menu-dots.svg" alt="drag" />
+        <img src="./assets/menu-dots.svg" alt="menu" />
       </div>
     </div>
     <div id="${id}" class="list__draggable"></div>
