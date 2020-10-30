@@ -8,7 +8,9 @@ const createModal = (title, content, callback) => {
         <div class="modal__title">${title}</div>
       </div>
       <div class="modal__info">
-        ${content}
+        <form class="modal__form">
+          ${content}
+        </form>
       </div>
       <div class="modal__actions">
         <button id="buttonCancel" class="action-button">Cancel</button>
@@ -19,6 +21,14 @@ const createModal = (title, content, callback) => {
 
   document.body.appendChild(modal);
   document.body.classList.toggle('noscroll', true);
+
+  // Add Card button
+  modal.querySelector('.modal__form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const task = modal.querySelector('#inputValue').value;
+    callback(task);
+    removeModal(modal);
+  });
 
   // Cancel button
   modal.querySelector('#buttonCancel').addEventListener('click', () => {
