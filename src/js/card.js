@@ -1,11 +1,11 @@
-import { generateListId } from './utils';
+import { generateListId, encodeHTML } from './utils';
 
 const getCardHTML = ({ task, id }) => {
   const card = document.createElement('div');
   card.className = 'card';
   card.setAttribute('data-id', id);
   card.innerHTML = `
-    <div class="card__text">${task}</div>
+    <div class="card__text">${encodeHTML(task)}</div>
     <div class="card__close">
       <i class="fas fa-times"></i>
     </div>
