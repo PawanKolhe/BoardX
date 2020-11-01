@@ -8,13 +8,13 @@ const createModal = (title, content, callback) => {
         <div class="modal__title">${title}</div>
       </div>
       <div class="modal__info">
-        <form class="modal__form">
+        <form id="modalForm" class="modal__form">
           ${content}
         </form>
       </div>
       <div class="modal__actions">
         <button id="buttonCancel" class="action-button">Cancel</button>
-        <button id="buttonAddCard" class="action-button button-green">Add</button>
+        <button id="buttonSubmit" form="modalForm" class="action-button button-green">Add</button>
       </div>
     </div>
   `;
@@ -36,11 +36,20 @@ const createModal = (title, content, callback) => {
   });
 
   // Add Card button
-  modal.querySelector('#buttonAddCard').addEventListener('click', () => {
-    const task = modal.querySelector('#inputValue').value;
-    callback(task);
-    removeModal(modal);
-  });
+  // modal.querySelector('#buttonSubmit').addEventListener('click', () => {
+  //   const value = modal.querySelector('#inputValue').value;
+  //   const valid = callback(value);
+  //   if(valid) {
+  //     removeModal(modal);
+  //   }
+  //   else if(valid === undefined) {
+  //     console.error('No validation response from modal callback.');
+  //     removeModal(modal);
+  //   }
+  //   else {
+  //     return;
+  //   }
+  // });
 
   modal.querySelector('.modal__backdrop').addEventListener('click', () => {
     removeModal(modal);
@@ -53,19 +62,19 @@ const removeModal = (modal) => {
 }
 
 const addCardModalHTML = `
-  <div id="add-form">
+  <div id="add-card-form">
     <div class="input-group">
       <label for="inputValue">Task</label>
-      <input id="inputValue" type="text" />
+      <input id="inputValue" type="text" required />
     </div>
   </div>
 `;
 
 const addListModalHTML = `
-  <div id="add-form">
+  <div id="add-list-form">
     <div class="input-group">
       <label for="inputValue">Name</label>
-      <input id="inputValue" type="text" pattern="[_a-zA-Z]+[_a-zA-Z0-9-]*" />
+      <input id="inputValue" type="text" pattern="^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$" required />
     </div>
   </div>
 `;

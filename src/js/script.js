@@ -108,7 +108,7 @@ dragulaCards.on("drop", (el, target, source, sibling) => {
 
 // Add List button listener
 document.querySelector('#addListButton').addEventListener('click', (e) => {
-  createModal('Add List', addListModalHTML, (name) => {
-    createList(name);
+  createModal('Add List', addListModalHTML, (listName) => {
+    createList(listName);
   });
 });

@@ -54,6 +54,10 @@
   }
 }
 
+.modal__error {
+  color: #df0909;
+}
+
 @media screen and (max-width: 450px) {
   .modal__content {
     width: 90%;
