@@ -65,7 +65,7 @@ const addCardModalHTML = `
   <div id="add-card-form">
     <div class="input-group">
       <label for="inputValue">Task</label>
-      <input id="inputValue" type="text" required />
+      <input id="inputValue" type="text" oninvalid="this.setCustomValidity('Task cannot be empty')" oninput="this.setCustomValidity('')" required />
     </div>
   </div>
 `;
@@ -74,7 +74,7 @@ const addListModalHTML = `
   <div id="add-list-form">
     <div class="input-group">
       <label for="inputValue">Name</label>
-      <input id="inputValue" type="text" pattern="^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$" required />
+      <input id="inputValue" type="text" pattern="^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$" oninvalid="this.setCustomValidity('Only letters, numbers, spaces, hyphens, and underscores allowed')" oninput="this.setCustomValidity('')" required />
     </div>
   </div>
 `;

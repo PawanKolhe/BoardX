@@ -54,6 +54,13 @@
   }
 }
 
+input:valid {
+  border-color: #2EC36B;
+} 
+input:focus:invalid {
+  border-color: #A73C50;
+} 
+
 .modal__error {
   color: #df0909;
 }
