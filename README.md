@@ -1,5 +1,5 @@
 
-<p><img src="https://raw.githubusercontent.com/PawanKolhe/BoardX/main/public/logo.png" alt="logo" width="20%" /></p>
+<p><img src="https://raw.githubusercontent.com/PawanKolhe/BoardX/main/public/logo.png" alt="logo" width="110" /></p>
 
 # BoardX
 
