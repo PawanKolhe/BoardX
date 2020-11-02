@@ -7,21 +7,21 @@ Kanban board web app for organizing project tasks in lists.
 
 ![Banner](https://raw.githubusercontent.com/PawanKolhe/project-board/main/screenshots/banner.png)
 
-## Features
+## 🚀 Features
 - Drag & Drop lists and cards
 - Local Storage of board state
 - Offline support (PWA)
 - Add & Delete Lists
 - Add & Delete Cards
 
-## Upcoming Features
+## 🚧 Upcoming Features
 - Multiple boards
 - Card count on list
 - Dark mode
 - Themes
 - Cloud storage
 
-## Environment Setup
+## ⚙️ Environment Setup
 
 Install dependencies
 ```bash
@@ -32,3 +32,6 @@ Launch dev server
 ```bash
 npm run dev
 ```
+
+## 📜 License
+This software is open source, licensed under the [MIT License](https://github.com/PawanKolhe/BoardX/blob/master/LICENSE).
