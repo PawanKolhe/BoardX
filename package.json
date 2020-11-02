@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
-    "postbuild": "workbox generateSW"
+    "build": "parcel build src/index.html"
   },
   "keywords": [],
   "author": "Pawan Kolhe <contact@pawankolhe.com>",
