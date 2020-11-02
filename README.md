@@ -3,7 +3,7 @@
 
 # BoardX
 
-Kanban board web app for organizing project tasks in lists.
+Kanban board web app for managing project tasks in lists.
 
 ![Banner](https://raw.githubusercontent.com/PawanKolhe/project-board/main/screenshots/banner.png)
 
