@@ -1,7 +1,7 @@
 {
   "name": "project-board",
   "version": "1.0.0",
-  "description": "",
+  "description": "Kanban board web app for project management",
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
@@ -24,7 +24,6 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "dragula": "^3.7.3",
-    "fonts.css": "^2.0.0",
     "normalize.css": "^8.0.1",
     "sortablejs": "^1.12.0",
     "tippy.js": "^6.2.7"
