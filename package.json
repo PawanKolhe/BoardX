@@ -5,19 +5,26 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "postbuild": "workbox generateSW"
   },
   "keywords": [],
   "author": "Pawan Kolhe <contact@pawankolhe.com>",
   "license": "ISC",
   "devDependencies": {
     "cssnano": "^4.1.10",
+    "get-google-fonts": "^1.2.2",
     "parcel-bundler": "^1.12.4",
+    "parcel-plugin-nuke-dist": "^1.0.1",
     "parcel-plugin-static-files-copy": "^2.5.0",
-    "sass": "^1.27.0"
+    "parcel-plugin-sw-precache": "^1.1.2",
+    "sass": "^1.27.0",
+    "workbox-cli": "^5.1.4"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "dragula": "^3.7.3",
+    "fonts.css": "^2.0.0",
     "normalize.css": "^8.0.1",
     "sortablejs": "^1.12.0",
     "tippy.js": "^6.2.7"
@@ -25,5 +32,11 @@
   "staticFiles": {
     "staticPath": "public",
     "watcherGlob": "**"
+  },
+  "cache": {
+    "disablePlugin": false,
+    "inDev": false,
+    "strategy": "basic",
+    "clearDist": true
   }
 }

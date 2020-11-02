@@ -4,6 +4,8 @@ import { createList } from "./list";
 import { createCard } from "./card";
 import { Sortable } from "sortablejs";
 
+import dragula from '../../node_modules/dragula/dragula';
+
 // State
 self.boardState = loadBoardState();
 if(boardState) {
