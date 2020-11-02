@@ -1,5 +1,5 @@
 {
-  "name": "project-board",
+  "name": "boardx",
   "version": "1.0.0",
   "description": "Kanban board web app for project management",
   "main": "index.js",

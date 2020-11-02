@@ -1,6 +1,6 @@
 {
-    "name": "Project Board",
-    "short_name": "Project Board",
+    "name": "BoardX",
+    "short_name": "BoardX",
     "start_url": ".",
     "display": "standalone",
     "theme_color": "#344563",
