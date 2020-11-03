@@ -59,12 +59,12 @@ body {
   height: 14px;
 }
 .content::-webkit-scrollbar-track {
-  // background: $grey-light;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .content::-webkit-scrollbar-thumb {
   background-color: lighten($color: $grey-normal, $amount: 30%);
   border-radius: 20px;
-  // border: 8px solid $grey-light;
 }
 
 @media screen and (max-width: 1000px) {
