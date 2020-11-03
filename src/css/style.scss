@@ -51,6 +51,20 @@ body {
   max-width: 1920px;
   flex: 1;
   overflow: auto;
+  margin-bottom: 10px;
+}
+
+/* Works on Chrome/Edge/Safari */
+.content::-webkit-scrollbar {
+  height: 14px;
+}
+.content::-webkit-scrollbar-track {
+  // background: $grey-light;
+}
+.content::-webkit-scrollbar-thumb {
+  background-color: lighten($color: $grey-normal, $amount: 30%);
+  border-radius: 20px;
+  // border: 8px solid $grey-light;
 }
 
 @media screen and (max-width: 1000px) {

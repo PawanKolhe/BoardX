@@ -79,6 +79,22 @@ $list-button-back: #e7ecf5;
   &__draggable {
     flex: 1;
     overflow-y: auto;
+
+    /* Works on Chrome/Edge/Safari */
+    &::-webkit-scrollbar {
+      width: 6px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    &::-webkit-scrollbar-track {
+      background: $grey-light;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: lighten($color: $grey-normal, $amount: 25%);
+      border-radius: 20px;
+      // border: 7px solid $grey-light;
+    }
   }
 
   &.gu-transit {
