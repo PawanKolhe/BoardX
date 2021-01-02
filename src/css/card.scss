@@ -1,8 +1,10 @@
+$card-background: $primary-color;
+
 .card {
   position: relative;
-  min-height: 100px;
-  background-color: white;
-  border-radius: 1rem;
+  // min-height: 100px;
+  background-color: $card-background;
+  border-radius: 0.5rem;
   padding: 1rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
@@ -30,7 +32,7 @@
 }
 
 .card__text {
-  color: $grey-dark;
+  color: white;
   font-weight: 500;
 }
 
