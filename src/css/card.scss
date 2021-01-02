@@ -1,9 +1,8 @@
-$card-background: $primary-color;
-
 .card {
   position: relative;
   // min-height: 100px;
-  background-color: $card-background;
+  background-color: white;
+  border: 1px solid $primary-color;
   border-radius: 0.5rem;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -32,7 +31,7 @@ $card-background: $primary-color;
 }
 
 .card__text {
-  color: white;
+  color: #333;
   font-weight: 500;
 }
 

@@ -114,8 +114,8 @@ $list-button-back: #e7ecf5;
   justify-content: center;
   padding: 10px;
   border-radius: 0.5rem;
-  background-color: white;
-  color: $primary-color;
+  background-color: $primary-color;
+  color: white;
   font-size: 0.8rem;
   margin-top: 1rem;
   margin: 1rem 1rem 0 1rem;
@@ -129,7 +129,7 @@ $list-button-back: #e7ecf5;
   }
 
   &:hover {
-    background-color: lighten($primary-color, 50%);
+    background-color: lighten($primary-color, 5%);
   }
 }
 
