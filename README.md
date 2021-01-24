@@ -15,6 +15,8 @@ Kanban board web app for managing project tasks in lists.
 - Add & Delete Cards
 
 ## 🚧 Upcoming Features
+- Editing cards
+- Renaming Lists
 - Multiple boards
 - Card count on list
 - Dark mode
