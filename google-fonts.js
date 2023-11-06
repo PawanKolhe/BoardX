@@ -17,4 +17,4 @@ const fonts = async () => {
 };
 
 
-fonts();
+();
